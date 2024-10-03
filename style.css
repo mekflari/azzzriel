@@ -1,0 +1,1216 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #0C0C0C;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-bold {
+    font-family: "PoppinsBold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.arrowup {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: #0C0C0C;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+.arrowup a {
+    text-decoration: none;
+    text-align: center;
+    color: #FC6435;
+    font-size: 40px;
+}
+
+.header h1 {
+    font-family: "Poppins";
+    font-size: 24px;
+    color: #FC6435;
+}
+
+.header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    background-color: #0C0C0C;
+}
+
+.logo {
+    color: #FC6435;
+    font-family: 'Poppins';
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+}
+
+.header ul {
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+
+.header ul li {
+    list-style: none;
+}
+
+.header ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.header ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+
+.header ul li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navbar a.active {
+    color:#FC6435;
+}
+
+.landing {
+    margin-top: 80px;
+    text-align: center;
+}
+
+/* Showreel and title adjustments */
+.showreel video {
+    width: 100%; /* Makes the video responsive */
+    max-width: 800px; /* Optional: Set a max width if you want */
+    margin: 0 auto; /* Center the video */
+}
+
+.title {
+    text-align: center; /* Center the title below the video */
+}
+
+/* Responsive: For larger screens */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr; /* Two columns on medium to large screens */
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .showreel {
+        grid-column: 1; /* Ensure it stays on the first column */
+    }
+
+    .title {
+        grid-column: 2; /* Title on the second column */
+    }
+}
+
+
+.showreel {
+    background-color: #FC6435;
+    border-radius: 300px;
+    margin-top: 100px;
+}
+
+.title {
+    margin-top: 80px;
+}
+
+.title h1 {
+    font-family: "Poppins";
+    font-size: 24px;
+    color: #FC6435;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.title ion-icon {
+    color: white;
+}
+
+.footer {
+    margin-bottom: 30px;
+}
+
+.footer p {
+    font-size: 8px;
+    color: white;
+}
+
+.gallery {
+    margin: 100px 50px;
+    text-align: center;
+}
+
+.film {
+    display: grid;
+    grid-template-areas:
+    'col1 col2 col3 col4 col5';
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.film img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.about {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.about h1 {
+    color: white;
+    font-size: 64px;
+    text-align: left;
+    line-height: 64px;
+}
+
+.contact {
+    text-align: left;
+    display: flex;
+    float: left;
+    gap: 25px;
+}
+
+.insta {
+    display: flex;
+    float: left;
+    gap: 10px;
+}
+
+.mail {
+    display: flex;
+    float: left;
+    gap: 10px;
+}
+
+.contact h3 {
+    color: white;
+    font-weight: 300;
+}
+
+.icon {
+    font-size: 32px;
+    color: white;
+}
+
+.works {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 equal columns */
+    grid-template-areas: 
+    'c1 c1 c1 c1 c2 c2 c2 c2'; /* Assign grid areas */
+    gap: 50px; /* Optional: Add some space between the items */
+    padding-top: 20px;
+    overflow-x: hidden;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.works img {
+    width: 100%; /* Take up the full width of the grid area */
+    height: auto; /* Keep aspect ratio */
+}
+
+.works video {
+    width: 100%; /* Take up the full width of the grid area */
+    height: auto; /* Keep aspect ratio */
+}
+
+.works iframe {
+    width: 100%;
+    height: 375px;
+}
+
+.works a {
+    text-decoration: none;
+    transition: .5s ease;
+}
+
+.works a:hover {
+    opacity: 0.5;
+}
+
+.works h3 {
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    padding-bottom: 0;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.works p {
+    padding-top: 0;
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: #FC6435;
+    text-align: left;
+}
+
+.works h2 {
+    color: white;
+    background-color: #0C0C0C;
+    border: 1px solid #FC6435;
+    border-radius: 80px;
+    min-width: 20px;
+    max-width: 100px;
+    font-size: 10px;
+    font-weight: 550;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    text-align: center;
+}
+
+.cat1 {
+    display: none;
+}
+
+.role {
+    display: flex;
+    float: left;
+    gap: 10px;
+}
+
+.role h2 {
+    color: #0C0C0C;
+    background-color: #FC6435;
+    border-radius: 80px;
+    min-width: 20px;
+    max-width: 100px;
+    font-size: 10px;
+    font-weight: 550;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    text-align: center;
+}
+
+.c1 {
+    grid-area: c1;
+}
+
+.c2 {
+    grid-area: c2;
+}
+
+.desc {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Make name take up space and tag take up auto width */
+    justify-content: space-between; /* Distribute the name and tag evenly */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: baseline; /* Vertically center-align content */
+    text-align: left; /* Ensure text is aligned left */
+    gap: 20px;
+}
+
+.landingwork {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.back {
+    top: 90px;
+    left: 50px;
+    width: 56px;
+    height: 56px;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.back a {
+    text-decoration: none;
+    color: #FC6435;
+    font-size: 56px;
+    text-align: center;
+}
+
+.worktitle {
+    text-align: center;
+}
+
+.worktitle h1 {
+    color: white;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+.worktitle h2 {
+    color: #FC6435;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.stills img{
+    max-width: 900px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.stills video {
+    max-width: 900px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.stills iframe {
+    width: 900px;
+    height: 600px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 600px) {
+    .header {
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+
+    .group ul li a {
+        font-size: 14px;
+    }
+
+    .header ul {
+        gap: 16px;
+    }
+
+    .showreel video {
+        width: 300px;
+    }
+
+    .title {
+        margin-top: 30px;
+    }
+
+    .title h1 {
+        font-size: 18px;
+    }
+
+    .works {
+        margin-left: 20px;
+        margin-right: 20px;
+        gap: 20px; 
+        grid-template-areas: 
+        'c1 c1 c1 c1'
+        'c2 c2 c2 c2';  
+        grid-template-columns: 1fr; 
+    }
+    
+    .works iframe {
+        height: 150px;
+    }
+    
+    .works h3 {
+        font-size: 16px;
+    }
+
+    .works h2 {
+        font-size: 10px;
+        min-width: 0px;
+        max-width: 1000px;
+        padding: 5px 10px;
+    }
+
+    .works p {
+        font-size: 10px;
+        padding-bottom: 0;
+    }
+
+    .role {
+        margin-bottom: 20px;
+    }
+
+    .role h2 {
+        min-width: 5px;
+        max-width: 1000px;
+    }
+
+    .desc {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .gallery {
+        margin: 50px 20px;
+    }
+
+    .film {
+        gap: 10px;
+    }
+
+    .gallery img {
+        border-radius: 4px;
+    }
+
+    .back {
+        left: 30px;
+        top: 80px;
+    }
+
+    .back a {
+        font-size: 40px;
+    }
+
+    .worktitle h1{
+        font-size: 24px;
+        line-height: 32px;
+
+    }
+
+    .worktitle h2 {
+        font-size: 16px;
+    }
+
+    .stills img, video{
+        width: 450px;
+        height: auto;
+    }
+
+    .about {
+        margin-left: 20px;
+    }
+
+    .about h1 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .contact {
+        font-size: 10px;
+    }
+
+    .icon {
+        font-size: 16px;
+    }
+
+    .stills iframe {
+        width: 400px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .header {
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        font-size: 14px;
+    }
+
+    .group ul li a {
+        font-size: 8px;
+    }
+
+    .header ul {
+        gap: 10px;
+    }
+
+    .showreel video {
+        width: 200px;
+    }
+
+    .title {
+        margin-top: 30px;
+    }
+
+    .title h1 {
+        font-size: 18px;
+    }
+
+    .gallery {
+        margin: 35px 20px;
+    }
+
+    .gallery img {
+        border-radius: 6px;
+        padding-bottom: 0px;
+    }
+
+    .back {
+        display: none;
+    }
+
+    .worktitle h1{
+        font-size: 24px;
+    }
+
+    .worktitle h2 {
+        font-size: 16px;
+    }
+
+    .stills img, video{
+        width: 300px;
+        height: auto;
+    }
+
+    .about {
+        margin-left: 20px;
+    }
+
+    .about h1 {
+        font-size: 48px;
+        line-height: 40px;
+    }
+
+    .works h3 {
+        font-size: 10px;
+    }
+
+    .works h2 {
+        font-size: 6px;
+        min-width: 0px;
+        max-width: 1000px;
+    }
+
+    .works p {
+        font-size: 6px;
+        padding-bottom: 0;
+    }
+
+    .role {
+        margin-bottom: 20px;
+    }
+
+    .role h2 {
+        min-width: 5px;
+        max-width: 1000px;
+    }
+
+    .desc {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 699px) {
+    .header {
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+
+    .group ul li a {
+        font-size: 14px;
+    }
+
+    .header ul {
+        gap: 16px;
+    }
+
+    .showreel video {
+        width: 400px;
+    }
+
+    .title {
+        margin-top: 30px;
+    }
+
+    .title h1 {
+        font-size: 18px;
+    }
+
+    .gallery {
+        margin: 50px 20px;
+    }
+
+    .film {
+        gap: 10px;
+    }
+
+    .gallery img {
+        border-radius: 4px;
+    }
+
+    .back {
+        left: 30px;
+        top: 80px;
+    }
+
+    .back a {
+        font-size: 40px;
+    }
+
+    .worktitle h1{
+        font-size: 32px;
+        line-height: 32px;
+
+    }
+
+    .worktitle h2 {
+        font-size: 16px;
+    }
+
+    .stills img, video{
+        width: 450px;
+        height: auto;
+    }
+
+    .about h1 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .contact {
+        font-size: 10px;
+        gap: 10px;
+    }
+
+    .icon {
+        font-size: 16px;
+    }
+
+    .works {
+        margin-left: 20px;
+        margin-right: 20px;
+        gap: 20px; 
+        grid-template-areas: 
+        'c1 c1 c1 c1'
+        'c2 c2 c2 c2';  
+        grid-template-columns: 1fr; 
+    }
+    
+    .works iframe {
+        height: 150px;
+    }
+    
+    .works h3 {
+        font-size: 16px;
+    }
+
+    .works h2 {
+        font-size: 10px;
+        min-width: 0px;
+        max-width: 1000px;
+        padding: 5px 10px;
+    }
+
+    .works p {
+        font-size: 10px;
+        padding-bottom: 0;
+    }
+
+    .role {
+        margin-bottom: 20px;
+    }
+
+    .role h2 {
+        min-width: 5px;
+        max-width: 1000px;
+    }
+
+    .desc {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .stills iframe {
+        width: 500px;
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 799px) {
+    .header {
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+
+    .group ul li a {
+        font-size: 16px;
+    }
+
+    .header ul {
+        gap: 16px;
+    }
+
+    .showreel video {
+        width: 400px;
+    }
+
+    .title {
+        margin-top: 30px;
+    }
+
+    .title h1 {
+        font-size: 18px;
+    }
+
+    .gallery {
+        margin: 50px 20px;
+    }
+
+    .film {
+        gap: 10px;
+    }
+
+    .gallery img {
+        border-radius: 4px;
+    }
+
+    .back {
+        left: 30px;
+        top: 80px;
+    }
+
+    .back a {
+        font-size: 40px;
+    }
+
+    .worktitle h1{
+        font-size: 32px;
+        line-height: 40px;
+
+    }
+
+    .worktitle h2 {
+        font-size: 16px;
+    }
+
+    .stills img, video{
+        width: 600px;
+        height: auto;
+    }
+
+    .about {
+        margin-left: 20px;
+    }
+
+    .about h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .works {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'c1 c1 c1 c1'
+        'c2 c2 c2 c2';
+    }
+
+    .works h3 {
+        font-size: 16px;
+    }
+
+    .works h2 {
+        font-size: 10px;
+        min-width: 0px;
+        max-width: 1000px;
+        padding: 5px 10px;
+    }
+
+    .works p {
+        font-size: 14px;
+        padding-bottom: 0;
+    }
+
+    .role {
+        margin-bottom: 20px;
+    }
+
+    .role h2 {
+        min-width: 5px;
+        max-width: 1000px;
+    }
+
+    .desc {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .stills iframe {
+        width: 600px;
+        height: 350px;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+    .header {
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+
+    .group ul li a {
+        font-size: 16px;
+    }
+
+    .header ul {
+        gap: 16px;
+    }
+
+    .showreel video {
+        width: 450px;
+    }
+
+    .title {
+        margin-top: 30px;
+    }
+
+    .title h1 {
+        font-size: 18px;
+    }
+
+    .gallery {
+        margin: 50px 20px;
+    }
+
+    .film {
+        gap: 10px;
+    }
+
+    .gallery img {
+        border-radius: 6px;
+        padding-bottom: 0px;
+    }
+
+    .back {
+        left: 50px;
+        top: 80px;
+    }
+
+    .back a {
+        font-size: 40px;
+    }
+
+    .worktitle h1{
+        font-size: 32px;
+        line-height: 40px;
+
+    }
+
+    .worktitle h2 {
+        font-size: 16px;
+    }
+
+    .stills img, video{
+        width: 800px;
+        height: auto;
+    }
+
+    .about {
+        margin-left: 20px;
+    }
+
+    .about h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .works {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'c1 c1 c1 c1'
+        'c2 c2 c2 c2';
+    }
+
+    .works h3 {
+        font-size: 24px;
+    }
+
+    .works h2 {
+        font-size: 16px;
+        min-width: 0px;
+        max-width: 1000px;
+        padding: 5px 10px;
+    }
+
+    .works p {
+        font-size: 16px;
+        padding-bottom: 0;
+    }
+
+    .role {
+        margin-bottom: 20px;
+    }
+
+    .role h2 {
+        min-width: 5px;
+        max-width: 1000px;
+    }
+
+    .desc {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .stills iframe {
+        width: 700px;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1300px){
+    .header {
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+
+    .group ul li a {
+        font-size: 16px;
+    }
+
+    .header ul {
+        gap: 16px;
+    }
+
+    .showreel video {
+        width: 650px;
+    }
+
+    .title {
+        margin-top: 30px;
+    }
+
+    .title h1 {
+        font-size: 18px;
+    }
+
+    .gallery {
+        margin: 50px 20px;
+    }
+
+    .film {
+        gap: 20px;
+    }
+
+    .gallery img {
+        border-radius: 6px;
+        padding-bottom: 0px;
+    }
+
+    .back {
+        left: 30px;
+        top: 80px;
+    }
+
+    .back a {
+        font-size: 40px;
+    }
+
+    .worktitle h1{
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .worktitle h2 {
+        font-size: 16px;
+    }
+
+    .stills img, video{
+        width: 900px;
+        height: auto;
+    }
+
+    .about {
+        margin-left: 50px;
+    }
+
+    .about h1 {
+        font-size: 48px;
+        line-height: 50px;
+    }
+
+    .works {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'c1 c1 c1 c1'
+        'c2 c2 c2 c2';
+    }
+
+    .works h3 {
+        font-size: 24px;
+    }
+
+    .works h2 {
+        font-size: 16px;
+        min-width: 0px;
+        max-width: 1000px;
+        padding: 5px 10px;
+    }
+
+    .works p {
+        font-size: 16px;
+        padding-bottom: 0;
+    }
+
+    .role {
+        margin-bottom: 20px;
+    }
+
+    .role h2 {
+        min-width: 5px;
+        max-width: 1000px;
+    }
+
+    .desc {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .stills iframe {
+        width: 800px;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) and (min-width: 300px) {
+    .header {
+        height: 50px;
+    }
+    
+    .works {
+        margin-left: 20px;
+        margin-right: 20px;
+        gap: 20px; 
+        grid-template-areas: 
+        'c1 c1 c1 c1'
+        'c2 c2 c2 c2';  
+        grid-template-columns: 1fr; 
+    }
+    
+    .works iframe {
+        height: 150px;
+    }
+    
+    .works h3 {
+        font-size: 10px;
+    }
+
+    .works h2 {
+        font-size: 6px;
+        min-width: 0px;
+        max-width: 1000px;
+        padding: 5px 5px;
+    }
+
+    .works p {
+        font-size: 6px;
+        padding-bottom: 0;
+    }
+
+    .role {
+        margin-bottom: 20px;
+    }
+
+    .role h2 {
+        min-width: 5px;
+        max-width: 1000px;
+    }
+
+    .desc {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    
+    .gallery {
+        margin: 35px 20px;
+    }
+    
+    .gallery img {
+        border-radius: 6px;
+        padding-bottom: 0px;
+    }
+
+    .about {
+        margin-left: 20px;
+    }
+
+    .about h1 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .contact {
+        gap: 10px;
+    }
+
+    .icon {
+        font-size: 16px;
+    }
+
+    .contact h3 {
+        font-size: 8px;
+    }
+
+    .footer {
+        font-size: 8px;
+    }
+
+    .worktitle h1 {
+        line-height: 32px;
+
+    }
+
+    .stills iframe {
+        width: 300px;
+        height: 150px;
+    }
+}
